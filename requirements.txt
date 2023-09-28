@@ -1,3 +1,4 @@
---upgrade pip
-uvicorn[standard]
+uvicorn
 fastapi
+openai
+os
