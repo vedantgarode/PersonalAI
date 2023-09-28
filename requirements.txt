@@ -1,3 +1,2 @@
---upgrade pip
-uvicorn[standard]
-fastapi
+uvicorn==0.23.2
+fastapi==0.101.1
