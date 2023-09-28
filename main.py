@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 import openai
-
+import os 
 app = FastAPI()
 
+openai.api_key = "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"
 @app.get("/")
 async def root():
    return {"message": "Hello World"}
@@ -10,7 +11,7 @@ async def root():
 
 @app.get("/convo")
 async def convo():
-   os.environ["OPENAI_API_KEY"] = "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"
+   
    response = openai.ChatCompletion.create(
       model="gpt-3.5-turbo",
       messages=[
@@ -21,4 +22,4 @@ async def convo():
       ]
    )
 
-print(response['choices'][0]['message']['content'])
+   return(response['choices'][0]['message']['content'])
